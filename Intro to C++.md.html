@@ -1,0 +1,541 @@
+<meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/slate.css?">
+**C++ for beginners**
+   Levon Hovhannisyan 2022 v0.1
+
+
+![Course progress](https://progress-bar.dev/43?width=1000&color=babaca)
+
+# What is C++
+
+C++ is a [cross-platform](https://en.wikipedia.org/wiki/Cross-platform_software) language that can be used to create high-performance applications.
+
+[C++ was developed by Bjarne Stroustrup](https://www.cplusplus.com/info/history/), as an extension to the [C language](https://en.wikipedia.org/wiki/C_(programming_language).
+
+Unlike many other languages like JavaScrypt, Python, Java, etc., [C++ is a compiled language](https://www.cplusplus.com/info/description/) and gives programmers a high level of control over system resources and memory.
+
+The language was updated 4 major times in 2011, 2014, 2017, and 2020 to C++11, C++14, C++17, C++20.
+
+
+
+# Why Use C++
+
+C++ is one of the world's most popular programming languages.
+
+C++ is used to write the most high performace and popular softwares like:
+- Operations systems: Windows, Macos
+- Web Browsers: Chrome, Firefox
+- Database software: MySQL
+- A lot of Games
+- ...
+
+C++ is an object-oriented programming language which gives a clear structure to programs and allows code to be reused, lowering development costs.
+
+C++ is portable and can be used to develop applications that can be adapted to multiple platforms.
+
+C++ is fun and easy to learn!
+
+As C++ is close to C# and Java, it makes it easy for programmers to switch to C++ or vice versa.
+
+
+
+
+
+
+
+
+
+
+
+
+# C++ Get Started
+
+To start using C++, you need two things:
+
+A text editor, like Notepad, to write C++ code
+A compiler, like GCC, to translate the C++ code into a language that the computer will understand
+There are many text editors and compilers to choose from. In this tutorial, we will use [Sublime Text](https://www.sublimetext.com/). This is very fast and lighweight code editor that can be configured as an IDE(instead of VS Code for instance)..
+
+!!! Note
+    If you have problems installing the code/text editor and/or compiler, you can use one of online C++ code compilers, like [programiz.com](https://www.programiz.com/cpp-programming/online-compiler/)
+
+## C++ Install IDE/Code editor and compiler
+
+### For ***Windows*** operation system
+0. Download [Sublime Text](https://www.sublimetext.com/download) and install it as a code editor. 
+1. Download [MinGW](https://github.com/msys2/msys2-installer/releases/download/2022-01-18/msys2-x86_64-20220118.exe) and install this [compiler](https://en.wikipedia.org/wiki/Compiler). 
+2. Open MSYS2 program from Windows start menu and paste this and then hit enter: `pacman -Syu`.
+3. After the first command is executed, paste this command in the MSYS2: `pacman -Su`
+4. And the last one: `pacman -S --needed base-devel mingw-w64-x86_64-toolchain`
+5. This should be added to the PATH environment variables: `C:\msys64\mingw64\bin`
+
+### For ***Mac OS*** operation system
+
+Just download the [Sublime Text](https://www.sublimetext.com/download) and install it as a code editor. 
+The Mac OS already has installed a C++ compiler.
+
+
+
+
+
+
+
+
+
+
+
+# C++ First program
+
+Let's write our first program. Copy the code above and paste in a new document inside the Sublime Text and save it with name "first.cpp".
+
+```C
+#include <iostream>
+using namespace std;
+
+int main() {
+  cout << "Hello World!";
+  return 0;
+}
+```
+This code is just a text and the Sublime does nothing but highlithing the syntax of C++ code/text for developer. 
+
+!!! WARNING
+    It is important to save the C++ code file with extension ".cpp"
+
+!!! WARNING
+    It is important to save the C++ code before compilation.
+
+!!! Note
+    1.`Compile the code` : Ctr+Shift+B -> select <mark>C++ single file</mark>  OR type in terminal <mark>g++ first.cpp -o first</mark>  . The compiler will generate an executable programm with name "first".
+    
+    2.`Run the program`: Double click on the executable in your file browser but **Not In Sublime Text**. Our first program prints a mesage "Hello World!" in the terminal. That is what we have programmed in the code.
+
+
+!!! WARNING
+    Don't worry if you don't understand how <mark>#include <\iostream></mark> and <mark>using namespace std</mark> works. Just think of it as something that (almost) always appears in your program.
+!!! WARNING
+    Every C++ statement ends with a semicolon ;
+!!! WARNING
+    Every C++ statement ends with a semicolon ;
+
+
+## C++ Comments
+Comments can be used to explain C++ code, and to make it more readable. It can also be used to prevent execution when testing alternative code. Comments can be singled-lined or multi-lined.
+Any text between // and the end of the line is ignored by the compiler (will not be executed).
+```C
+// This is a comment
+cout << "Hello World!";
+```
+
+This example uses a single-line comment at the end of a line of code:
+```C
+cout << "Hello World!"; // This is a comment
+```
+
+Multi-line comments start with `/*` and ends with `*/`. Any text between `/*` and `*/` will be ignored by the compiler:
+```C
+/* The code below will print the words Hello World!
+to the screen, and it is amazing */
+cout << "Hello World!";
+```
+
+Let's modify our first program's code and add some comments into it.
+
+```cpp
+/*The line below is called "including a header file". We need this to be able to print a message.*/
+#include <iostream> 
+
+using namespace std; // We need this also for printing messages and output other things into terminal with "cout".
+
+
+// This called a function whcih name is "main" and the type is int. 
+// When we compile and execute our code, the programm always starts from this function.
+// Any C++ programm MUST have this function. Any code inside its curly brackets {} will be executed.
+int main() {
+  
+  cout << "Hello World!"; // Here we print a message to the terminal.
+  
+  return 0; // Here we return a 0 to the Operation System, when the execution of our program is completed.
+}
+```
+
+!!! Note
+    Let's save the file and again compile and execute. We can notice that the program does exactly the same thing as before. 
+    That is because we have only added comments into our code and the compiler ignores them.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# C++ Variables
+
+Variables are containers for storing data values.
+
+In C++, there are different <mark>types</mark> of variables (defined with different keywords), for example:
+
+- `int` - stores integers (whole numbers), without decimals, such as 123 or -123
+- `float` - stores floating point numbers, with decimals, such as 19.99 or -19.99
+- `double` - like float but with higher(double) precision
+- `char` - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes
+- `string` - stores text, such as "Hello World". String values are surrounded by double quotes
+- `bool` - stores values with two states: true or false
+
+!!! Note: float vs. double
+    The precision of a floating point value indicates how many digits the value can have after the decimal point. The precision of float is only six or seven decimal digits, while double variables have a precision of about 15 digits. Therefore it is safer to use double for most calculations.
+
+Declaring (Creating) Variables
+!!! Note: To create a variable, specify the type and assign it a value:
+    *`type variableName = value;`*
+
+Where type is one of C++ types (such as int), and variableName is the name of the variable (such as x or myName). The equal sign is used to assign values to the variable.
+
+To create a variable that should store a number, look at the following example:
+```C
+//Create a variable called myNum of type int and assign it the value 15:
+int myNum = 15;
+cout << myNum;
+```
+
+You can also declare a variable without assigning the value, and assign the value later:
+```C
+int myNum;
+myNum = 15;
+cout << myNum;
+```
+
+Note that if you assign a new value to an existing variable, it will overwrite the previous value:
+```C
+int myNum = 15;  // myNum is 15
+myNum = 10;  // Now myNum is 10
+cout << myNum;  // Outputs 10
+```
+
+A demonstration of other data types:
+```C
+int myNum = 5;               // Integer (whole number without decimals)
+double myFloatNum = 5.99;    // Floating point number (with decimals)
+char myLetter = 'D';         // Character
+string myText = "Hello";     // String (text)
+bool myBoolean = true;       // Boolean (true or false)
+```
+
+## Declare Many Variables
+To declare more than one variable of the same type, use a comma-separated list:
+```C
+int x = 5, y = 6, z = 50;
+```
+## One Value to Multiple Variables
+You can also assign the same value to multiple variables in one line:
+```C
+int x, y, z;
+x = y = z = 50;
+cout << x + y + z;
+```
+
+## C++ Identifiers
+All C++ variables must be identified with unique names.
+
+These unique names are called identifiers.
+
+Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).
+
+Note: It is recommended to use descriptive names in order to create understandable and maintainable code:
+```C
+// Good
+int minutesPerHour = 60;
+
+// OK, but not so easy to understand what m actually is
+int m = 60;
+```
+!!! WARNING: The general rules for naming variables are:
+    - Names can contain letters, digits and underscores ONLY
+    - Names must begin with a letter or an underscore _
+    - Names are case sensitive (myVar and myvar are different variables)
+    - Names cannot contain whitespaces or special characters like !, #, %, etc.
+    - Reserved words (like C++ keywords, such as int) cannot be used as names
+
+
+# C++ Operators
+
+Operators are used to perform operations on variables and values.
+
+In the example below, we use the + operator to add together two values:
+```C
+int x = 100 + 50;
+```
+
+Although the + operator is often used to add together two values, like in the example above, it can also be used to add together a variable and a value, or a variable and another variable:
+```C
+int sum1 = 100 + 50;        // 150 (100 + 50)
+int sum2 = sum1 + 250;      // 400 (150 + 250)
+int sum3 = sum2 + sum2;     // 800 (400 + 400)
+```
+
+C++ divides the operators into the following groups:
+
+- Arithmetic operators
+- Assignment operators
+- Comparison operators 
+- Logical operators 
+- Bitwise operators
+
+
+Operator  | Type       | Name                     | Description                            | Example             | Same As
+----------|------------|--------------------------|----------------------------------------|---------------------|--------
++         | Arithmetic | Addition                 | Adds together two values               | x + y               
+-         | Arithmetic | Subtraction              | Subtracts one value from another       | x - y               
+*         | Arithmetic | Multiplication           | Multiplies two values                  | x * y               
+/         | Arithmetic | Division                 | Divides one value by another           | x / y               
+%         | Arithmetic | Modulus                  | Returns the division remainder         | x % y               
+++        | Arithmetic | Increment                | Increases the value of a variable by 1 | ++x                 | x = x + 1
+- -       | Arithmetic | Decrement                | Decreases the value of a variable by 1 | - -x                | x = x - 1
+=         | Assignment | Equals to                |                                        | x = 5               | x = 5
++=        | Assignment | Plus equals              |                                        | x += 3              | x = x + 3 
+-=        | Assignment | Minus equals             |                                        | x -= 3              | x = x - 3 
+ * =      | Assignment |                          |                                        | x * = 3             | x = x * 3 
+/=        | Assignment |                          |                                        | x /= 3              | x = x / 3 
+%=        | Assignment |                          |                                        | x %= 3              | x = x % 3
+==        | Comparison | Equal to                 |                                        | x == y              
+!=        | Comparison | Not equal                |                                        | x != y              
+>         | Comparison | Greater than             |                                        | x > y               
+<         | Comparison | Less than                |                                        | x < y               
+>=        | Comparison | Greater than or equal to |                                        | x >= y              
+<=        | Comparison | Less than or equal to    |                                        | x <= y              
+&&        | Logical    | Logical and              | Returns true if both statements are true                | x < 5 &&  x < 10 
+II        | Logical    | Logical or               | Returns true if one of the statements is true           | x < 5 II x < 4 
+!         | Logical    | Logical not              | Reverse the result, returns false if the result is true | !(x < 5 && x < 10)
+
+!!! Note: Bitwise operators
+    C++ also provides bitwise operators which are not represented here in the table. In C++, bitwise operators are used to perform operations on individual bits. They can only be used alongside char and int data types.
+    To learn more, visit [C++ bitwise operators](https://www.geeksforgeeks.org/bitwise-operators-in-c-cpp/).
+
+
+### Example 1: operators.cpp
+```C
+#include <iostream>
+using namespace std;
+
+int main() {
+
+
+    int a, b;
+    int result_a, result_b;
+    bool result;
+
+    a = 7; // 7 is assigned to a
+    b = 2; // 2 is assigned to b
+
+
+    // ARITHEMETIC OPERATORS
+    cout << "a + b = " << (a + b) << endl; // printing the sum of a and b
+    
+    cout << "a - b = " << (a - b) << endl; // printing the difference of a and b
+
+    cout << "a * b = " << (a * b) << endl; // printing the product of a and b
+    
+    cout << "a / b = " << (a / b) << endl; // printing the division of a by b
+
+    cout << "a % b = " << (a % b) << endl; // printing the modulo of a by b
+
+    result_a = ++a; // incrementing a by 1 and storing the result in result_a
+    cout << "result_a = " << result_a << endl;
+
+    result_b = --b; // decrementing b by 1 and storing the result in result_b  
+    cout << "result_b = " << result_b << endl;
+    cout <<"a = " << a <<" b = " << b << endl;
+
+    // COMPARISON OPERATORS
+    a = 7; // 7 is assigned to a again
+    b = 2; // 2 is assigned to b again
+
+    result = (a == b);   // false
+    cout << "7 == 2 is " << result << endl;
+
+    result = (a != b);  // true
+    cout << "7 != 2 is " << result << endl;
+
+    result = a > b;   // true
+    cout << "7 > 2 is " << result << endl;
+
+    result = a < b;   // false
+    cout << "7 < 2 is " << result << endl;
+
+    result = a >= b;  // true
+    cout << "7 >= 2 is " << result << endl;
+
+    result = a <= b;  // false
+    cout << "7 <= 2 is " << result << endl;
+
+
+
+    // LOGICAL OPERATORS
+
+    result = (3 != 5) && (3 < 5);     // true
+    cout << "(3 != 5) && (3 < 5) is " << result << endl;
+
+    result = (3 == 5) && (3 < 5);    // false
+    cout << "(3 == 5) && (3 < 5) is " << result << endl;
+
+    result = (3 == 5) && (3 > 5);    // false
+    cout << "(3 == 5) && (3 > 5) is " << result << endl;
+
+    result = (3 != 5) || (3 < 5);    // true
+    cout << "(3 != 5) || (3 < 5) is " << result << endl;
+
+    result = (3 != 5) || (3 > 5);    // true
+    cout << "(3 != 5) || (3 > 5) is " << result << endl;
+
+    result = (3 == 5) || (3 > 5);    // false
+    cout << "(3 == 5) || (3 > 5) is " << result << endl;
+
+    result = !(5 == 2);    // true
+    cout << "!(5 == 2) is " << result << endl;
+
+    result = !(5 == 5);    // false
+    cout << "!(5 == 5) is " << result << endl;
+
+
+    return 0;
+}
+```
+
+!!! Note
+    Paste this code into a new file with name "operators.cpp" -> Build(compile) and Run the Example 1
+
+Output should be:
+```
+a + b = 9
+a - b = 5
+a * b = 14
+a / b = 3
+a % b = 1
+result_a = 8
+result_b = 1
+a = 8 b = 1
+7 == 2 is 0
+7 != 2 is 1
+7 > 2 is 1
+7 < 2 is 0
+7 >= 2 is 1
+7 <= 2 is 0
+(3 != 5) && (3 < 5) is 1
+(3 == 5) && (3 < 5) is 0
+(3 == 5) && (3 > 5) is 0
+(3 != 5) || (3 < 5) is 1
+(3 != 5) || (3 > 5) is 1
+(3 == 5) || (3 > 5) is 0
+!(5 == 2) is 1
+!(5 == 5) is 0
+
+```
+
+
+
+!!! WARNING: Increment, Decrement
+    In the above program, we have used the ++ and -- operators as prefixes (++a and --b). However, we can also use these operators as postfix (a++ and b--).
+
+
+!!! WARNING: / Division operator and int types (integral types)
+    As we can see from the above example, if an integer is divided by another integer, we will get the quotient. However, if either divisor or dividend is a floating-point number, we will get the result in decimals.
+    ```
+    In C++,
+
+    7/2 is 3
+    7.0 / 2 is 3.5
+    7 / 2.0 is 3.5
+    7.0 / 2.0 is 3.5
+    ```
+
+!!! WARNING: % Modulo Operator
+    The modulo operator % computes the remainder. When a = 9 is divided by b = 4, the remainder is 1.
+
+    The % operator can only be used with integers.
+
+
+# C++ Flow Control
+
+- if...else
+- for loop
+- while loop
+- do..while loop
+- break
+- continue
+- switch statement
+- goto statement
+
+
+# C++ Functions
+
+- Functions
+- Function Types
+- Function Overloading
+- Default Argument
+- Storage Class
+- Recursion
+- Return Reference
+
+# C++ Arrays, Strings and Math
+
+- Arrays
+- Multidimensional Arrays
+- Function and Array
+- String
+- cmath lib main functions
+
+# C++ Structures
+
+TBD
+
+# C++ Object & Class
+- OOP
+- Classes/Objects
+- Class Methods
+- Constructors
+- Access Specifiers
+- Encapsulation
+- Inheritance
+- Polymorphism
+- Files
+- Exceptions
+- Operator Overloading
+
+# C++ References
+
+TBD
+
+
+# C++ Pointers
+
+TBD
+
+
+# C++ Inheritance
+
+TBD
+
+# Not in this course
+
+TBD
+
+
+
+
+
+
+<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'short'};</script>
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
+
+
+
