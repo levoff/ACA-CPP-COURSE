@@ -1,0 +1,204 @@
+<meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/slate.css?">
+**C++ for beginners**
+   V 0.1
+
+
+
+
+# Ի՞նչ է `C++`-ը
+
+C++ is a cross-platform language that can be used to create high-performance applications.
+
+C++ was developed by Bjarne Stroustrup, as an extension to the C language.
+
+C++ gives programmers a high level of control over system resources and memory.
+
+The language was updated 4 major times in 2011, 2014, 2017, and 2020 to C++11, C++14, C++17, C++20.
+
+
+# Why Use C++
+
+C++ is one of the world's most popular programming languages.
+
+C++ can be found in today's operating systems, Graphical User Interfaces, and embedded systems.
+
+C++ is an object-oriented programming language which gives a clear structure to programs and allows code to be reused, lowering development costs.
+
+C++ is portable and can be used to develop applications that can be adapted to multiple platforms.
+
+C++ is fun and easy to learn!
+
+As C++ is close to C# and Java, it makes it easy for programmers to switch to C++ or vice versa.
+
+
+
+
+
+
+
+
+
+
+
+# C++ Get Started
+
+To start using C++, you need two things:
+
+A text editor, like Notepad, to write C++ code
+A compiler, like GCC, to translate the C++ code into a language that the computer will understand
+There are many text editors and compilers to choose from. In this tutorial, we will use an IDE (see below).
+
+## C++ Install IDE
+
+1. https://github.com/msys2/msys2-installer/releases/download/2022-01-18/msys2-x86_64-20220118.exe
+2. pacman -Syu
+3. pacman -Su
+4. pacman -S --needed base-devel mingw-w64-x86_64-toolchain
+5. C:\msys64\mingw64\bin
+
+## C++ quickstart
+
+```C
+#include <iostream>
+using namespace std;
+
+int main() {
+  cout << "Hello World!";
+  return 0;
+}
+```
+
+`TO RUN THE CODE` : Ctr+Shift+B -> select `C++ single file`
+
+## Anatomy of our first C++ code
+
+TBD
+
+
+
+
+
+
+
+
+
+
+
+# C++ Comments
+Comments can be used to explain C++ code, and to make it more readable. It can also be used to prevent execution when testing alternative code. Comments can be singled-lined or multi-lined.
+Any text between // and the end of the line is ignored by the compiler (will not be executed).
+```C
+// This is a comment
+cout << "Hello World!";
+```
+
+This example uses a single-line comment at the end of a line of code:
+```C
+cout << "Hello World!"; // This is a comment
+```
+
+Multi-line comments start with `/*` and ends with `*/`. Any text between `/*` and `*/` will be ignored by the compiler:
+```C
+/* The code below will print the words Hello World!
+to the screen, and it is amazing */
+cout << "Hello World!";
+```
+
+
+# C++ Variables
+
+Variables are containers for storing data values.
+
+In C++, there are different types of variables (defined with different keywords), for example:
+
+int - stores integers (whole numbers), without decimals, such as 123 or -123
+double - stores floating point numbers, with decimals, such as 19.99 or -19.99
+char - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes
+string - stores text, such as "Hello World". String values are surrounded by double quotes
+bool - stores values with two states: true or false
+
+
+
+Declaring (Creating) Variables
+To create a variable, specify the type and assign it a value:
+
+*`type variableName = value;`*
+
+Where type is one of C++ types (such as int), and variableName is the name of the variable (such as x or myName). The equal sign is used to assign values to the variable.
+
+To create a variable that should store a number, look at the following example:
+```C
+//Create a variable called myNum of type int and assign it the value 15:
+int myNum = 15;
+cout << myNum;
+```
+
+You can also declare a variable without assigning the value, and assign the value later:
+```C
+int myNum;
+myNum = 15;
+cout << myNum;
+```
+
+Note that if you assign a new value to an existing variable, it will overwrite the previous value:
+```C
+int myNum = 15;  // myNum is 15
+myNum = 10;  // Now myNum is 10
+cout << myNum;  // Outputs 10
+```
+
+## Other Types
+
+A demonstration of other data types:
+```C
+int myNum = 5;               // Integer (whole number without decimals)
+double myFloatNum = 5.99;    // Floating point number (with decimals)
+char myLetter = 'D';         // Character
+string myText = "Hello";     // String (text)
+bool myBoolean = true;       // Boolean (true or false)
+```
+
+## Display Variables
+
+The cout object is used together with the << operator to display variables.
+
+To combine both text and a variable, separate them with the << operator:
+```C
+int myAge = 35;
+cout << "I am " << myAge << " years old.";
+```
+
+## Add Variables Together
+
+To add a variable to another variable, you can use the + operator:
+```C
+int x = 5;
+int y = 6;
+int sum = x + y;
+cout << sum;
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'short'};</script>
+<script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
+
+
+

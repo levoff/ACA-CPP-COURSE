@@ -1,0 +1,44 @@
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
+# Un-ignore Makefiles and LICENSE files
+!Makefile
+!LICENSE
+
+### Above combination will ignore all files without extension ###
+
+# Ignore files with extension `.class` & `.sm`
+*.class
+*.sm
+
+# Ignore `bin` dir
+bin/
+# or
+*/bin/*
+/A/CPP-*/
+
+# Ignore macos specific file
+.DS_Store
+
+# Sublime files ignore
+*.sublime-project
+*.sublime-workspace
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# object and debug files
+*.d
+*.slo
+*.lo
+*.o
+*.obj
+*.dSYM/
+*.pyc
+*.so
