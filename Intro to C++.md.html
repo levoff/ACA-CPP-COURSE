@@ -1,5 +1,5 @@
 <meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/slate.css?">
-**C++ for beginners**
+**Intro to C++**
    Levon Hovhannisyan 2022 v0.1
 
 
@@ -414,7 +414,7 @@ int main() {
 !!! Note
     Paste this code into a new file with name "operators.cpp" -> Build(compile) and Run the Example 1
 
-Output should be:
+*Output should be:*
 ```
 a + b = 9
 a - b = 5
@@ -466,14 +466,121 @@ a = 8 b = 1
 
 # C++ Flow Control
 
-- if...else
-- for loop
-- while loop
-- do..while loop
-- break
-- continue
-- switch statement
-- goto statement
+A simple C++ statement is each of the individual instructions of a program, like the variable declarations and expressions seen in previous sections. They always end with a semicolon (;), and are executed in the same order in which they appear in a program.
+
+But programs are not limited to a linear sequence of statements. During its process, a program may repeat segments of code, or take decisions and bifurcate. For that purpose, C++ provides flow control statements that serve to specify what has to be done by our program, when, and under which circumstances.
+
+
+- Conditional and/or branching statements: `if...else, switch`
+- Loops: `for, while, do...while`
+- Jump statements: `break, continue, goto`
+
+## If...Else statement
+![How if...else Statement Works](./A/if_else.png)
+
+Further readings:
+
+[geeksforgeeks.org/decision-making](https://www.geeksforgeeks.org/decision-making-c-c-else-nested-else/)
+
+[geeksforgeeks.org/c-c-if-else-statement-with-examples](https://www.geeksforgeeks.org/c-c-if-else-statement-with-examples/)
+
+
+
+## For loop
+
+The general syntax: 
+```C
+for (initialization; condition; update) {
+    // body of-loop 
+}
+```
+Here,
+
+- initialization - initializes variables and is executed only once
+- condition - if true, the body of for loop is executed if false, the for loop is terminated
+- update - updates the value of initialized variables and again checks the condition
+
+**Example**
+
+```C
+// C++ Program to print numbers from 1 to 5
+#include <iostream>
+
+using namespace std;
+
+int main() {
+        for (int i = 1; i <= 5; ++i) {
+        cout << "i=" << i << " ";
+    }
+    return 0;
+}
+```
+*Output should be:*
+```
+i=1 i=2 i=3 i=4 i=5 
+```
+
+
+
+## While loop
+
+The general syntax:
+
+```C
+while (condition) {
+    // body of the loop
+}
+```
+
+Here,
+
+- A while loop evaluates the condition
+- If the condition evaluates to true, the code inside the while loop is executed.
+- The condition is evaluated again.
+- This process continues until the condition is false.
+- When the condition evaluates to false, the loop terminates.
+
+**Example**
+
+```C
+// C++ Program to print numbers from 1 to 5
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i = 1; 
+
+    // while loop from 1 to 5
+    while (i <= 5) {
+        cout << "i=" << i << " ";
+        ++i;
+    }
+    
+    return 0;
+}
+```
+
+*Output should be:*
+```
+i=1 i=2 i=3 i=4 i=5 
+```
+
+
+
+!!! Note: *for* VS *while* loops
+    A for loop is usually used when the number of iterations is known.
+
+    However, while and do...while loops are usually used when the number of iterations is unknown.
+
+
+## Break and Continue statements
+
+- In C++, the break statement terminates the loop when it is encountered.
+- In C++, the continue statement is used to skip the current iteration of the loop and the control of the program goes to the next iteration.
+
+![How Break and Continue Statement Works](./A/break_continue.png)
+
 
 
 # C++ Functions
@@ -485,6 +592,61 @@ a = 8 b = 1
 - Storage Class
 - Recursion
 - Return Reference
+
+A function is a block of code that performs a specific task.
+
+Dividing a complex problem into smaller chunks makes our program easy to understand and reusable.
+
+There are two types of function:
+
+Standard Library Functions: Predefined in C++
+User-defined Function: Created by users
+
+## C++ Function Declaration
+
+The syntax to declare a function is:
+
+```C
+returnType functionName (parameter1, parameter2,...) {
+    // function body   
+}
+```
+
+**Example of function declaration**
+
+```C
+// function declaration
+void greet() {
+    cout << "Hello World";
+}
+```
+
+**Calling a Function**
+
+In the above program, we have declared a function named greet(). To use the greet() function, we need to call it.
+
+Here's how we can call the above greet() function.
+
+
+```C
+int main() {
+     
+    // calling a function   
+    greet(); 
+
+}
+```
+
+![How function calling works](./A/functions_1.png)
+
+
+
+
+
+
+
+
+
 
 # C++ Arrays, Strings and Math
 
@@ -525,11 +687,9 @@ TBD
 
 TBD
 
-# Not in this course
+# References
 
-TBD
-
-
+[cppreference.com](https://en.cppreference.com/w/cpp)
 
 
 
