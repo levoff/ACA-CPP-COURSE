@@ -1,9 +1,9 @@
 <meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/slate.css?">
 **Intro to C++**
-   Levon Hovhannisyan 2022 v0.1
+   Levon Hovhannisyan 2022 v0.2
 
 
-![Course progress](https://progress-bar.dev/43?width=1000&color=babaca)
+<!-- ![Course progress](https://progress-bar.dev/43?width=1000&color=babaca) -->
 
 # What is C++
 
@@ -585,14 +585,6 @@ i=1 i=2 i=3 i=4 i=5
 
 # C++ Functions
 
-- Functions
-- Function Types
-- Function Overloading
-- Default Argument
-- Storage Class
-- Recursion
-- Return Reference
-
 A function is a block of code that performs a specific task.
 
 Dividing a complex problem into smaller chunks makes our program easy to understand and reusable.
@@ -639,8 +631,115 @@ int main() {
 
 ![How function calling works](./A/functions_1.png)
 
+## C++ Function Type and Return Statement
+
+![How function return works](./A/functions_return.png)
 
 
+## C++ Function Prototype
+
+In C++, the code of function declaration should be before the function call. However, if we want to define a function after the function call, we need to use the function prototype. For example,
+
+
+```C
+// function prototype
+void add(int, int);
+
+int main() {
+    // calling the function before declaration.
+    add(5, 3);
+    return 0;
+}
+
+// function definition
+void add(int a, int b) {
+    cout << (a + b);
+}
+```
+
+## C++ Function Overloading
+
+
+In C++, two functions can have the same name if the number and/or type of arguments passed is different.
+These functions having the same name but different arguments are known as overloaded functions. For example:
+
+```C
+// same name different arguments
+int test() { }
+int test(int a) { }
+float test(double a) { }
+int test(int a, double b) { }
+```
+
+## C++ Default Arguments
+
+In C++ programming, we can provide default values for function parameters.
+
+If a function with default arguments is called without passing arguments, then the default parameters are used.
+
+However, if arguments are passed while calling the function, the default arguments are ignored.
+
+```C
+#include <iostream>
+
+int add(int a=10, int b=20) {
+    return (a + b);
+}
+
+int main() {
+    int sum;
+
+    std::cout << add() << std::endl;
+
+    return 0;
+}
+```
+
+!!! WARNING
+    Once we provide a default value for a parameter, all subsequent parameters must also have default values. For example,
+    ```C
+    // Invalid
+    void add(int a, int b = 3, int c, int d);
+
+    // Invalid
+    void add(int a, int b = 3, int c, int d = 4);
+
+    // Valid
+    void add(int a, int c, int b = 3, int d = 4);
+    ```
+
+!!! WARNING
+    If we are defining the default arguments in the function definition instead of the function prototype, then the function must be defined before the function call.
+    ```C
+    #include <iostream>
+
+    int add(int a, int b);
+
+    int main() {
+        int sum;
+
+        std::cout << add() << std::endl; // Invalid call
+        
+        std::cout << add(47, 54) << std::endl; // Valid call
+
+        return 0;
+    }
+
+    int add(int a=10, int b=20) {
+        return (a + b);
+    }
+    ```
+
+-------------------
+**Checklist** (temporary)
+
+- Functions
+- Function Types
+- Function Overloading
+- Default Argument
+- Storage Class
+- Recursion
+- Return Reference
 
 
 
