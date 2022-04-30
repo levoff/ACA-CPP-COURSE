@@ -629,8 +629,6 @@ int main() {
 }
 ```
 
-# Test
-
 
 ![How function calling works](./A/functions_1.png)
 
@@ -752,11 +750,95 @@ int main() {
 
 # C++ Arrays, Strings and Math
 
+In C++, an array is a variable that can store multiple values of the same type.
+
+**General syntax of array declaration**
+```C
+Type arrayName[arraySize];
+```
+**Example**
+```C
+int numbers[10];
+```
+
+!!! WARNING
+    In C++, the size and type of arrays cannot be changed after its declaration.
+
+
+## Array Initialization
+```C
+// array declaration and initialization
+int numbers[10] = {123,76,24,13,54,125,6,7,8,9};
+
+
+// store only 3 elements in the array
+// In such cases, the compiler assigns random values to the remaining places. Oftentimes, this random value is simply 0.
+int numbers[10] = {0,1,2};
+
+
+// array declaration and initialization with empty members
+// In such cases, the compiler automatically computes the size.
+int numbers[] = {0,1,2,3,4};
+```
+
+## Access Elements in C++ Array
+
+```C
+// syntax to access array elements
+array[index];
+```
+
+!!! Note
+    - The array indices start with 0. Meaning numbers[0] is the first element stored at index 0.
+
+    - If the size of an array is n, the last element is stored at index (n-1). In this example, numbers[5] is the last element.
+
+    - Elements of an array have consecutive addresses. For example, suppose the starting address of numbers[0] is 2120.
+
+    - Then, the address of the next element numbers[1] will be 2124, the address of numbers[2] will be 2128, and so on.
+
+    - Here, the size of each element is increased by 4. This is because the size of int is 4 bytes.
+
+
+
+## Passing Arrays as Function Parameter/Argument
+
+**General Syntax**
+```C
+returnType functionName(dataType arrayName[arraySize]) {
+    // code
+}
+```
+
+**Example**
+```C
+int average(int numbers[5]) {
+    // code
+}
+```
+
+**Function call with array**
+
+When we call a function by passing an array as the argument, only the name of the array is used.
+```C
+int numbers[5] = {72,95,63,81,88};
+
+average(numbers);
+```
+
+
+
+
+-------------------
+**Checklist** (temporary)
 - Arrays
 - Multidimensional Arrays
 - Function and Array
 - String
 - cmath lib main functions
+
+
+
 
 # C++ Structures
 
