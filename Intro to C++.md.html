@@ -1,6 +1,6 @@
 <meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/slate.css?">
 **Intro to C++**
-   Levon Hovhannisyan 2022 v0.2
+   Levon Hovhannisyan 2022 v0.3
 
 
 <!-- ![Course progress](https://progress-bar.dev/43?width=1000&color=babaca) -->
@@ -826,8 +826,50 @@ int numbers[5] = {72,95,63,81,88};
 average(numbers);
 ```
 
+## String
 
+```C
+char str[];
+char *str;
+string str;
+```
 
+**Example**
+
+```C
+#include <iostream>
+
+using namespace std;
+
+void display(char *);
+void display(string);
+
+int main()
+{
+    string str1;
+    char str[100];
+
+    cout << "Enter a string: ";
+    getline(cin, str1);
+
+    cout << "Enter another string: ";
+    cin.get(str, 100, '\n');
+
+    display(str1);
+    display(str);
+    return 0;
+}
+
+void display(char s[])
+{
+    cout << "Entered char array is: " << s << endl;
+}
+
+void display(string s)
+{
+    cout << "Entered string is: " << s << endl;
+}
+```
 
 -------------------
 **Checklist** (temporary)
