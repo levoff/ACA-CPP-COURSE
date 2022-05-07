@@ -1,6 +1,6 @@
 <meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/slate.css?">
 **Intro to C++**
-   Levon Hovhannisyan 2022 v0.3
+   Levon Hovhannisyan 2022 v0.4
 
 
 <!-- ![Course progress](https://progress-bar.dev/43?width=1000&color=babaca) -->
@@ -731,16 +731,7 @@ int main() {
     }
     ```
 
--------------------
-**Checklist** (temporary)
 
-- Functions
-- Function Types
-- Function Overloading
-- Default Argument
-- Storage Class
-- Recursion
-- Return Reference
 
 
 
@@ -829,94 +820,147 @@ average(numbers);
 ## String
 
 ```C
-char str[];
-char *str;
-string str;
+char str[]; // C style string is a regular array of chars that ends with non printable character '\0' or just number 0
+char *str; // C style string. Same as char str[] 
+string str; // C++ string
 ```
 
-**Example**
+### String declaration and initialization
+```C
+#include <iostream>
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+  char str1[] = {'H','e','l','l','o',' ','W','o','r','l','d','\0'}; // we have to manually add '\0' at the end of the char array and then it becomes as string
+  char str2[] = "Hello World"; //compiler automatically adds '\0' for us
+  string str3 = "Hello World";
+
+
+  cout << str1 <<" | length : "<< sizeof(str1)/sizeof(char) << endl;
+  cout << str2 <<" | length : "<< sizeof(str2)/sizeof(char) << endl;
+  cout << str3 <<" | length : "<< str3.length() << endl;
+
+
+  return 0;
+}
+```
+Output
+```sh
+Hello World | length : 12
+Hello World | length : 12
+Hello World | length : 11
+```
+
+### Strings concatenation
+```C
+#include <iostream>
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+  string str1 = "Hello";
+  string str2 = "World";
+
+  // In C++ the + operator can be used between strings to add them together to make a new string. 
+  // This is called concatenation. 
+  // WARNING: concatenation with + operator is not available for C style strings.
+  string str3 = str1 + " " + str2 + '!'; 
+
+
+  cout << str3 << endl;
+
+
+  return 0;
+}
+```
+
+Output
+```sh
+Hello World!
+```
+
+**Example: geting strings from command line**
 
 ```C
 #include <iostream>
 
 using namespace std;
 
-void display(char *);
-void display(string);
-
 int main()
 {
-    string str1;
-    char str[100];
 
-    cout << "Enter a string: ";
-    getline(cin, str1);
+    string str_string = "";
+    cout << "Enter words: ";
+    getline(std::cin,str_string); // will get "unlimited" number of charcters
 
-    cout << "Enter another string: ";
-    cin.get(str, 100, '\n');
 
-    display(str1);
-    display(str);
+    char str_char[32];
+    cout << "Enter words: ";
+    std::cin.getline(str_char, 32); // will get maximum 32 characters 
+    // std::cin.getline(str_char, 32); // will get maximum 32 characters or less, if there is a ,(comma) character
+    // std::cin.get(str_char, 32, ',');
+
+
+    cout << "Entered string is: " << str_string << endl;
+    cout << "Entered char array is: " << str_char << endl;
+
+    // !!! NOTE: 
+    // getline() function works with C++ std::string objects.
+    // cin.getline() and cin.get() work with "classic" C style strings
+
     return 0;
-}
-
-void display(char s[])
-{
-    cout << "Entered char array is: " << s << endl;
-}
-
-void display(string s)
-{
-    cout << "Entered string is: " << s << endl;
 }
 ```
 
--------------------
-**Checklist** (temporary)
-- Arrays
+
+--------------------------------------------------------------------------------
+# Topics not FULLY covered yet - 07 May 2022)
+
+- Many things discussed verbally and/or on whiteboard that are not shown in this document.
+- Some limits so far: dynamic/variable len arrays, return arrays from function
+
+- Header and source files
+- Statements: switch
+- Keywords: const, static, volatile, register 
+- Binary number systems
+- Bitwise operators
 - Multidimensional Arrays
-- Function and Array
-- String
-- cmath lib main functions
+- Sorting algorithms: Bubble sort, Selection sort, Insertion sort, Merge sort, Quick sort.
+- Random numbers
+- Functions: Recursion, Pass by reference, Return reference, retrun pointer
+- References
+- Pointers
+
+- Libraries and execution environment
+- <cmath> lib functions: sqrt(), floor(), trunc(), round(), pow(), qfabs(), etc...
+- Algorithm complexity
+- Debugging
+- Dynamic memory allocation
+- Structures
+- Classes
 
 
 
 
-# C++ Structures
-
-TBD
-
-# C++ Object & Class
-- OOP
-- Classes/Objects
-- Class Methods
-- Constructors
-- Access Specifiers
-- Encapsulation
-- Inheritance
-- Polymorphism
-- Files
-- Exceptions
-- Operator Overloading
-
-# C++ References
-
-TBD
 
 
-# C++ Pointers
-
-TBD
 
 
-# C++ Inheritance
 
-TBD
 
-# References
+
+
+
+
+
+
+
+# Links to WEB resouces
 
 [cppreference.com](https://en.cppreference.com/w/cpp)
 
+[cplusplus.com](https://www.cplusplus.com)
 
 
 

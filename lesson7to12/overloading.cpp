@@ -41,6 +41,11 @@ int main()
     print("Hello", "\n");
     print(12.34, "\n");
 
+
+    // To not close the command line immediately
+    // Note: Comment if you run in Sublime 
+    // system("read"); //for UNIX
+    // system("pause"); //for Windows
     return 0;
 }
 
