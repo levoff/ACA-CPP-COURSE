@@ -61,6 +61,9 @@
 
 // int main(int argc, char const *argv[])
 // {
+//   int x = 1;
+//   cin >> x;
+  
 //   char str1[] = {'H','e','l','l','o',' ','W','o','r','l','d','\0'}; // we have to manually add '\0' at the end of the char array and then it becomes as string
 //   char str2[] = "Hello World"; //compiler automatically adds '\0'
 //   string str3 = "Hello World";
@@ -75,7 +78,30 @@
 // }
 
 
+// #include <iostream>
 
+// using namespace std;
+
+// void func(int x, int& y, int* z)
+// {
+//     y++;
+//     cout <<"In func:   "<< x << ", " << y << ", " << *z << ", " << &x << ", " << &y << ", " << &z << endl;
+// }
+
+// int main (){
+
+//     int  a = 5;
+//     int& b = a;
+//     int *c = &a;
+
+//     cout <<"Original1: "<< a << ", " << b << ", " << *c << ", " << &a << ", " << &b << ", " << &c << endl;
+
+//     func(a, b, c);
+
+//     cout <<"Original2: "<< a << ", " << b << ", " << *c << ", " << &a << ", " << &b << ", " << &c << endl;
+
+//     return 0;
+// }
 
 
 
