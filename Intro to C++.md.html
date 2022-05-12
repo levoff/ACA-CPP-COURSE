@@ -1,6 +1,6 @@
 <meta charset="utf-8" emacsmode="-*- markdown -*-"><link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/slate.css?">
 **Intro to C++**
-   Levon Hovhannisyan 2022 v0.4
+   Levon Hovhannisyan 2022 v0.5
 
 
 <!-- ![Course progress](https://progress-bar.dev/43?width=1000&color=babaca) -->
@@ -464,6 +464,23 @@ a = 8 b = 1
     The % operator can only be used with integers.
 
 
+## Ternary operator
+
+A ternary operator evaluates the test condition and executes a block of code based on the result of the condition.
+
+```C
+condition ? expression1 : expression2;
+```
+
+Here, condition is evaluated and
+
+- if condition is true, expression1 is executed.
+- And, if condition is false, expression2 is executed.
+
+The ternary operator takes 3 operands (condition, expression1 and expression2). Hence, the name ternary operator.
+
+
+
 # C++ Flow Control
 
 A simple C++ statement is each of the individual instructions of a program, like the variable declarations and expressions seen in previous sections. They always end with a semicolon (;), and are executed in the same order in which they appear in a program.
@@ -582,6 +599,34 @@ i=1 i=2 i=3 i=4 i=5
 ![How Break and Continue Statement Works](./A/break_continue.png)
 
 
+## Switch statement
+
+The switch statement allows us to execute a block of code among many alternatives.
+
+The general syntax:
+
+```C
+switch (expression)  {
+    case constant1:
+        // code to be executed if 
+        // expression is equal to constant1;
+        break;
+
+    case constant2:
+        // code to be executed if
+        // expression is equal to constant2;
+        break;
+        .
+        .
+        .
+    default:
+        // code to be executed if
+        // expression doesn't match any constant
+}
+```
+
+!!! Note
+    We can do the same thing with the if...else..if ladder. However, the syntax of the switch statement is cleaner and much easier to read and write.
 
 # C++ Functions
 
@@ -917,28 +962,29 @@ int main()
 --------------------------------------------------------------------------------
 # Topics not FULLY covered yet - 07 May 2022)
 
-- Many things discussed verbally and/or on whiteboard that are not shown in this document.
-- Some limits so far: dynamic/variable len arrays, return arrays from function
-
-- Header and source files
-- Statements: switch
-- Keywords: const, static, volatile, register 
-- Binary number systems
+(UPD??)- Operator precedence
+(UPD) - Ternary operator
+(UPD) - Statements: switch
 - Bitwise operators
+- Keywords: const, static 
+- Header and source files
+- Binary number systems
 - Multidimensional Arrays
-- Sorting algorithms: Bubble sort, Selection sort, Insertion sort, Merge sort, Quick sort.
-- Random numbers
-- Functions: Recursion, Pass by reference, Return reference, retrun pointer
-- References
-- Pointers
+- Functions: Recursion,
 
-- Libraries and execution environment
-- <cmath> lib functions: sqrt(), floor(), trunc(), round(), pow(), qfabs(), etc...
+
+
+- References + Pass by reference to function
+- AddressOf operator
+- Pointers + retrun pointer from func
+- Dynamic memory allocation
+- Classes & Structures
+
+
+- Sorting algorithms: Bubble sort, Selection sort, Insertion sort, Merge sort, Quick sort.
+- lib functions: sqrt(), floor(), trunc(), round(), pow(), qfabs(), rand()etc...
 - Algorithm complexity
 - Debugging
-- Dynamic memory allocation
-- Structures
-- Classes
 
 
 
