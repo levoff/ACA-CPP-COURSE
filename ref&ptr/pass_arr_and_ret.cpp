@@ -1,3 +1,6 @@
+
+
+
 #include <algorithm>
 #include <iostream>
 
@@ -50,10 +53,11 @@ int* fill_array_with(int arr[], int len, int from, int to, int with)
 {
   static int arr2[13];
 
-  for (int i = 0; i < len; ++i)
+  for (int i = 0; i < 13; ++i)
   {
     arr2[i] = arr[i];
   }
+
 
   for (int i = from; i <= to; ++i)
   {
@@ -73,11 +77,38 @@ void print_arr(int arr[], int arr_len) {
 }
 
 
+#define init {1,2,3,4,5,6,7,8,9, 10, 11, 12, 45}
+
+
+
+
 
 
 
 int main()
 {
+
+    int arr2[13] = init;
+
+    int arr3[];
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    int arr123[13] = {1,2,3,4,5,6,7,8,9, 10, 11, 12, 45};
 
     // int arr1[] = {1, 4, 100, 43, 9, 0, 8, 71, 16, 123, 5, 986, 54};
     
@@ -95,16 +126,22 @@ int main()
 
 
 
+    // int arr2[13] = {1,2,3,4,5,6,7,8,9, 10, 11, 12, 45};
 
-    int arr2[13] = {1,2,3,4,5,6,7,8,9, 10, 11, 12, 13};
 
     print_arr(arr2, 13);
 
-    int* abc = fill_array_with(arr2, 13, 9, 9, 0);
+    
+    
+    int* abc = fill_array_with(arr2, 13, 10, 13, 0);
 
-    for (int i = 0; i < 13; ++i)
+    // for (int i = 13; i >= 0; i--)
+    // {
+    //   cout << *(abc+i) << ", ";
+    // }
+    for (int i = 0; i < 13; i++)
     {
-      cout << *abc++ << ", ";
+      cout << abc[i] <<',' << *(abc+i) << ", ";
     }
     
     cout << '\n';
