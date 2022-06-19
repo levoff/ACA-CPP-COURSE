@@ -9,8 +9,7 @@ float PI = atan(1)*4; // definition of pi-3.141592....
 float g = 9.81;
 
 
-
-struct Projectile {
+class Projectile {
 
  	public:
 
@@ -39,7 +38,7 @@ struct Projectile {
 	 	// Copy constructor
 	 	Projectile(const Projectile& P){
 	 		A = new char[10];
-	 		strncpy(A, P.A,5);
+	 		strcpy(A, P.A);
 			v0 = P.v0;
 			x0 = P.x0;
 			y0 = P.y0;
@@ -50,6 +49,7 @@ struct Projectile {
 
 	 	~Projectile() {
 			delete[] A; // freeing the allocated memory in class destructor
+			std::cout << "~Destructor....." << '\n';
 	 	}
 
 
@@ -80,7 +80,7 @@ struct Projectile {
 
 		// Overload output operator << , this allows to use this class with cout or any other outut stream directly.
 		// Example: Projectile P; std::cout << P; // will print the same as print_summary() method
-		friend std::ostream &operator<<( std::ostream& output, const Projectile& P ) { 
+		friend std::ostream& operator<<( std::ostream& output, const Projectile& P ) { 
 			output <<"Initial velocity:  " << P.v0            << "\tm/v^2" << std::endl; 
 			output <<"Angle of launch:   " << P.theta*180/PI  << "\tdegrees" << std::endl; 
 			output <<"Height difference: " << P.Y_diff        << "\tmeters" << std::endl; 
@@ -113,14 +113,12 @@ struct Projectile {
 
 
 
-
-
-
 int main()
 {
 	// Creating Projectile class instance statically
 	Projectile OF1(250, 1000, terrain[1000], 2000, terrain[2000]);
 	OF1.calculate();
+	std::cout << OF1 << '\n'; // output using << operator overloding
 	std::cout << OF1 << '\n'; // output using << operator overloding
 	// OF1.print_summary();
 
@@ -136,9 +134,6 @@ int main()
 	OF2->calculate();
 	std::cout << *OF2;
 	delete OF2;
-
-
-
 
 	return 0;
 }
